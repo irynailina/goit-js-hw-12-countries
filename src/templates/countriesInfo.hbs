@@ -1,0 +1,20 @@
+<h2 class="title">{{name}}</h2>
+<div class="info">
+    <ul class="infoList">
+      <li class="infoList__item">
+        <p class="infoList__item_text">Capital: <span class="point">{{capital}}</span></p>
+      </li>
+      <li class="infoList__item">
+        <p class="infoList__item_text">Population: <span class="point">{{population}}</span></p>
+      </li>
+      <li class="infoList__item">
+        <p class="infoList__item_text">Languages:</p>
+        </li>
+        <ul class="langList">
+            {{#each languages}}
+          <li class="langList__item">{{this.name}}</li>
+          {{/each}}
+    </ul>
+    </ul>
+    <img src="{{flag}}" alt="{{name}}" class="countryImage" width="520" height="360">
+    </div>
