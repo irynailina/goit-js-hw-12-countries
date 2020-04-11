@@ -48,7 +48,6 @@ function searchCountry(e) {
 
 function clearSearch() {
   refs.input.value = '';
-  refs.countriesList.innerHTML = '';
 }
 
 function template({ name }) {
@@ -77,4 +76,5 @@ function clearBackSpace(e) {
 
 function clearResult() {
   refs.resultCountry.innerHTML = '';
+  refs.countriesList.innerHTML = '';
 }
