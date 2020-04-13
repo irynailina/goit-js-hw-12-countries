@@ -25,6 +25,7 @@ function searchCountry(e) {
         allNames(data);
         PNotify.closeAll();
       } else if (data.length === 1) {
+        refs.countriesList.innerHTML = '';
         allInfo(data);
         PNotify.closeAll();
       } else if (data.length > 10) {
@@ -46,10 +47,6 @@ function searchCountry(e) {
     .catch(error => console.error('ERROR---', error));
 }
 
-function clearSearch() {
-  refs.input.value = '';
-}
-
 function template({ name }) {
   return `
   <li class="CountriesList__item">
@@ -65,7 +62,7 @@ function allNames(data) {
 
 function allInfo(data) {
   const markup = data.map(country => countriesInfo(country)).join('');
-  refs.resultCountry.insertAdjacentHTML('beforeend', markup);
+  refs.resultCountry.innerHTML = markup;
 }
 
 function clearBackSpace(e) {
@@ -74,7 +71,11 @@ function clearBackSpace(e) {
   }
 }
 
+function clearSearch() {
+  refs.input.value = '';
+  refs.countriesList.innerHTML = '';
+}
+
 function clearResult() {
   refs.resultCountry.innerHTML = '';
-  refs.countriesList.innerHTML = '';
 }
